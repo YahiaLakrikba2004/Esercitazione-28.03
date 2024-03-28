@@ -1,0 +1,67 @@
+/* frase.css */
+body {
+  font-family: 'Bree Serif', serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4; /* Colore di sfondo grigio chiaro */
+  background-color: rgb(0, 0, 0);
+}
+
+#testoAlternato {
+  text-align: center;
+  font-size: 24px;
+  border: 2px solid #333; /* Bordo nero più spesso */
+  border-radius: 10px; /* Angoli arrotondati */
+  padding: 20px; /* Più spazio interno */
+  background-color: #fff; /* Sfondo bianco */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+}
+
+.parole {
+  text-align: center; /* Centra le parole aggiuntive */
+}
+
+.parole i {
+  opacity: 0;
+}
+
+/* Animazione per le parole aggiuntive */
+@keyframes cicloParole {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px); /* Sposta verso l'alto di 50px */
+  }
+  10%,
+  30% {
+    opacity: 1;
+    transform: translateY(0); /* Rimane al suo posto */
+  }
+  90%,
+  100% {
+    opacity: 0;
+    transform: translateY(50px); /* Sposta verso il basso di 50px */
+  }
+}
+
+/* Applicazione dell'animazione al set di parole */
+#testoAlternato .parole i:first-child {
+  animation: cicloParole 9s infinite 0s; /* Avvia l'animazione ciclica con ritardo di 0s */
+}
+
+#testoAlternato .parole i:nth-child(2) {
+  animation: cicloParole 9s infinite 3s; /* Avvia l'animazione ciclica con ritardo di 3s */
+}
+
+#testoAlternato .parole i:nth-child(3) {
+  animation: cicloParole 9s infinite 6s; /* Avvia l'animazione ciclica con ritardo di 6s */
+}
+
+/* Stile per il testo principale */
+#testoPrincipale {
+  display: inline-block;
+  margin-right: 10px; /* Aggiungi spazio alla destra */
+}
